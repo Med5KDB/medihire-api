@@ -1,5 +1,5 @@
-const express = require("express");
-const initDBConnection = require("./src/config/db");
+import express from "express";
+import initDBConnection from "./src/config/db.js";
 
 const app = express();
 const PORT = 3000;
