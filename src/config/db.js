@@ -11,10 +11,7 @@ const initDBConnection = async () => {
     }
 
     try {
-        await connect(MONGO_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        await connect(MONGO_URI);
         console.log("Successfully connected to the MongoDB database.");
     } catch (error) {
         console.error(`Database connection failed: ${error.message}`);
