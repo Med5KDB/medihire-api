@@ -20,7 +20,7 @@ const updateUser = async (req, res) => {
   const data = req.body;
 
   try {
-    const updated = await User.updateOne({ _id: userId }, { data });
+    const updated = await User.updateOne({ _id: userId }, data);
     res.json(updated);
   } catch (error) {
     res.status(500).json({ message: error.message });
