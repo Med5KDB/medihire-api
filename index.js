@@ -1,6 +1,8 @@
 import express from "express";
 import initDBConnection from "./src/config/db.js";
 import userRouter from "./src/user/user.route.js";
+import jobApplicationRouter from "./src/job-application/job-application.route.js";
+import jobOfferRouter from "./src/job-offer/job-offer.route.js";
 
 const app = express();
 const PORT = 3000;
@@ -13,6 +15,8 @@ app.use(express.json()); // New way to parse JSON i.e body-parser dependency is 
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/user", userRouter);
+app.use("/api/job-application", jobApplicationRouter);
+app.use("/api/job-offer", jobOfferRouter);
 
 initDBConnection()
   .then(() => {

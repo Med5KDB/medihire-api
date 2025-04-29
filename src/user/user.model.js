@@ -19,6 +19,12 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    role: {
+      type: String,
+      required: true,
+      enum: ["RECRUITER", "CANDIDATE", "ADMIN"],
+      default: "CANDIDATE",
+    },
   },
   { timestamps: true }
 );
